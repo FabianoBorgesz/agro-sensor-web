@@ -1,1 +1,87 @@
-<p>container-tabela works!</p>
+<div class="painel-container">
+  <!-- Cabeçalho Institucional -->
+  <header class="painel-header">
+    <div class="header-titles">
+      <h2>{{ titulo }}</h2>
+      <p class="subtitulo">{{ fazenda }}</p>
+    </div>
+    <div class="safra-badge">
+      <span>Safra 2026/2</span>
+    </div>
+  </header>
+
+  <!-- Cards de Indicadores Rápidos (KPIs AgroMonitor IoT) -->
+  <div class="kpi-grid">
+    <div class="kpi-card total">
+      <div class="kpi-content">
+        <span class="kpi-label">TOTAL DE LEITURAS</span>
+        <span class="kpi-value">{{ totalSensores }}</span>
+      </div>
+      <div class="kpi-icon">📊</div>
+    </div>
+
+    <div class="kpi-card ideal">
+      <div class="kpi-content">
+        <span class="kpi-label">SOLO EM NÍVEL IDEAL</span>
+        <span class="kpi-value">{{ totalIdeal }}</span>
+      </div>
+      <div class="kpi-icon">✅</div>
+    </div>
+
+    <div class="kpi-card alerta">
+      <div class="kpi-content">
+        <span class="kpi-label">EM ALERTA / ATENÇÃO</span>
+        <span class="kpi-value">{{ totalAlerta }}</span>
+      </div>
+      <div class="kpi-icon">⚠️</div>
+    </div>
+
+    <div class="kpi-card critico">
+      <div class="kpi-content">
+        <span class="kpi-label">EM ESTADO CRÍTICO</span>
+        <span class="kpi-value">{{ totalCritico }}</span>
+      </div>
+      <div class="kpi-icon">🚨</div>
+    </div>
+  </div>
+
+  <!-- Tabela Estruturada de Sensores -->
+  <div class="tabela-card">
+    <div class="tabela-topo">
+      <h3>Leituras de Telemetria de Solo</h3>
+      <span class="total-tag">{{ leituras.length }} registros coletados</span>
+    </div>
+
+    <div class="tabela-responsive">
+      <table class="tabela-sensores">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Data / Hora</th>
+            <th>N (mg/kg)</th>
+            <th>P (mg/kg)</th>
+            <th>K (mg/kg)</th>
+            <th>Umidade</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of leituras; let i = index">
+            <td class="col-index">{{ i + 1 }}</td>
+            <td class="col-data">{{ s.data }}</td>
+            <td class="col-nutriente"><strong>{{ s.n }}</strong></td>
+            <td class="col-nutriente"><strong>{{ s.p }}</strong></td>
+            <td class="col-nutriente"><strong>{{ s.k }}</strong></td>
+            <td class="col-umidade">{{ s.umidade * 100 }}%</td>
+            <td class="col-status">
+              <span class="badge" [ngClass]="s.status?.toLowerCase()">
+                <span class="dot"></span>
+                {{ s.status }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

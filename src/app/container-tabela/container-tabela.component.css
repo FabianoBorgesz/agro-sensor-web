@@ -1,0 +1,333 @@
+/* ===================================================
+   Container Principal do Painel AgroMonitor IoT
+   =================================================== */
+.painel-container {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 28px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1e293b;
+}
+
+/* ===================================================
+   Cabeçalho Institucional
+   =================================================== */
+.painel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f1f5f9;
+  margin-bottom: 24px;
+}
+
+.header-titles h2 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitulo {
+  font-size: 0.95rem;
+  color: #15803d;
+  font-weight: 500;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.subtitulo::before {
+  content: "📍";
+  font-size: 0.9rem;
+}
+
+.safra-badge {
+  background: #15803d;
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  box-shadow: 0 2px 4px rgba(21, 128, 61, 0.25);
+}
+
+/* ===================================================
+   Cards de KPIs Rápidos (Conforme Protótipo da Figura 1)
+   =================================================== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.kpi-card {
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.kpi-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kpi-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.kpi-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #0f172a;
+}
+
+.kpi-icon {
+  font-size: 1.7rem;
+  opacity: 0.9;
+}
+
+/* Cores temáticas dos KPIs */
+.kpi-card.total {
+  border-left: 5px solid #3b82f6;
+}
+
+.kpi-card.ideal {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 5px solid #22c55e;
+}
+.kpi-card.ideal .kpi-label { color: #166534; }
+.kpi-card.ideal .kpi-value { color: #15803d; }
+
+.kpi-card.alerta {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-left: 5px solid #f59e0b;
+}
+.kpi-card.alerta .kpi-label { color: #92400e; }
+.kpi-card.alerta .kpi-value { color: #b45309; }
+
+.kpi-card.critico {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-left: 5px solid #ef4444;
+}
+.kpi-card.critico .kpi-label { color: #991b1b; }
+.kpi-card.critico .kpi-value { color: #b91c1c; }
+
+/* ===================================================
+   Card da Tabela e Estrutura
+   =================================================== */
+.tabela-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.tabela-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tabela-topo h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.total-tag {
+  font-size: 0.8rem;
+  color: #64748b;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.tabela-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* ===================================================
+   Estilos da Tabela de Sensores (Requisitos da Etapa 5)
+   - Bordas suaves
+   - Cabeçalho escuro com texto branco
+   - Linhas alternadas (zebra)
+   - Distintivos coloridos (badges)
+   =================================================== */
+.tabela-sensores {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+/* Cabeçalho escuro com texto branco */
+.tabela-sensores thead tr {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.tabela-sensores th {
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #0f172a;
+}
+
+.tabela-sensores td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  vertical-align: middle;
+}
+
+/* Linhas alternadas (efeito zebra) */
+.tabela-sensores tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* Efeito ao passar o mouse */
+.tabela-sensores tbody tr:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* Estilização específica das colunas */
+.col-index {
+  font-weight: 700;
+  color: #64748b;
+  width: 50px;
+}
+
+.col-data {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.col-nutriente {
+  font-variant-numeric: tabular-nums;
+  color: #0f172a;
+}
+
+.col-nutriente strong {
+  font-weight: 600;
+}
+
+.col-umidade {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: #0284c7;
+}
+
+/* ===================================================
+   Badges Coloridos para os Status (Ideal, Alerta, Crítico)
+   =================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.badge .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Status Ideal: verde */
+.badge.ideal {
+  background-color: #dcfce7;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+.badge.ideal .dot {
+  background-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+/* Status Alerta: amarelo / âmbar */
+.badge.alerta {
+  background-color: #fef3c7;
+  color: #b45309;
+  border-color: #fde68a;
+}
+.badge.alerta .dot {
+  background-color: #f59e0b;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+/* Status Crítico: vermelho */
+.badge.critico {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+.badge.critico .dot {
+  background-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+/* ===================================================
+   Responsividade
+   =================================================== */
+@media (max-width: 768px) {
+  .painel-container {
+    margin: 16px;
+    padding: 16px;
+  }
+
+  .painel-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tabela-sensores th,
+  .tabela-sensores td {
+    padding: 10px 12px;
+  }
+}
