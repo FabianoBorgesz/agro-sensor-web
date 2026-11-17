@@ -12,7 +12,7 @@
 ## 👨‍🎓 Identificação do Aluno
 
 * **Nome Completo:** Fabiano
-* **Matrícula UniRV:** *[Preencha aqui com sua matrícula]*
+* **Matrícula UniRV:** 23207SFT016
 * **Curso:** Engenharia de Software / Ciência da Computação
 * **Instituição:** UniRV – Universidade de Rio Verde
 
