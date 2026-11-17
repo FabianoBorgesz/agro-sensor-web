@@ -47,7 +47,7 @@ Abaixo está a captura de tela da tabela de sensores renderizada no navegador:
 
 ### 1. Clonar o Repositório
 ```bash
-git clone https://github.com/<seu-usuario>/agro-sensor-web.git
+git clone https://github.com/FabianoBorgesz/agro-sensor-web.git
 cd agro-sensor-web
 ```
 
