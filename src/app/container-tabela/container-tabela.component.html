@@ -72,7 +72,7 @@
             <td class="col-nutriente"><strong>{{ s.n }}</strong></td>
             <td class="col-nutriente"><strong>{{ s.p }}</strong></td>
             <td class="col-nutriente"><strong>{{ s.k }}</strong></td>
-            <td class="col-umidade">{{ s.umidade * 100 }}%</td>
+            <td class="col-umidade">{{ formatUmidade(s.umidade) }}%</td>
             <td class="col-status">
               <span class="badge" [ngClass]="s.status?.toLowerCase()">
                 <span class="dot"></span>

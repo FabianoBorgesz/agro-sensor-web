@@ -39,4 +39,8 @@ export class ContainerTabelaComponent implements OnInit {
   get totalCritico(): number {
     return this.leituras.filter(s => s.status?.toLowerCase().includes('critico')).length;
   }
+
+  formatUmidade(umidade: number): number {
+    return Math.round(umidade * 100);
+  }
 }
